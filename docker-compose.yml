@@ -1,0 +1,43 @@
+services:
+  database:
+    image: postgres:16-alpine
+    container_name: udipsai-db
+    environment:
+      POSTGRES_DB: udipsai
+      POSTGRES_USER: udipsai_user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./udipsai-back
+    container_name: udipsai-backend
+    depends_on:
+      - database
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_URL: jdbc:postgresql://database:5432/udipsai
+      DB_USERNAME: udipsai_user
+      DB_PASSWORD: password
+      JWT_SECRET: OnePieceElBestoShonenAbsolutePeakAndCinema3D2Y_ChurinchurinFunFLaisElChapulinColoradooo2026_
+      JWT_EXPIRATION: 86400000
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./uploads:/uploads
+
+  frontend:
+    build: ./udipsai-front
+    container_name: udipsai-frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend
+    volumes:
+      - ./certs:/etc/nginx/certs:ro # Montamos los certificados generados
+
+volumes:
+  postgres_data:

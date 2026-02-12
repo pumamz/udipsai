@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #FA3340;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #FA3340;
+            margin: 0;
+            font-size: 24px;
+        }
+        .header p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section-title {
+            background-color: #f8f9fa;
+            padding: 8px 12px;
+            font-weight: bold;
+            border-left: 4px solid #FA3340;
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .info-grid {
+            display: table;
+            width: 100%;
+        }
+        .info-row {
+            display: table-row;
+        }
+        .info-label {
+            display: table-cell;
+            padding: 5px;
+            font-weight: bold;
+            width: 30%;
+            border-bottom: 1px solid #eee;
+        }
+        .info-value {
+            display: table-cell;
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 10px;
+            text-align: center;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>UDIPSAI - Universidad Católica de Cuenca</h1>
+        <p>REPORTE DE PASANTE</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Datos Personales</div>
+        <div class="info-grid">
+            <div class="info-row">
+                <div class="info-label">Nombres y Apellidos:</div>
+                <div class="info-value" th:text="${p.nombresApellidos}"></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Cédula:</div>
+                <div class="info-value" th:text="${p.cedula}"></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Email:</div>
+                <div class="info-value" th:text="${p.email}"></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Fecha de Nacimiento:</div>
+                <div class="info-value" th:text="${p.fechaNacimiento}"></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Ciudad:</div>
+                <div class="info-value" th:text="${p.ciudad}"></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Domicilio:</div>
+                <div class="info-value" th:text="${p.domicilio}"></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Contacto:</div>
+                <div class="info-value" th:text="${p.numeroTelefono + ' / ' + p.numeroCelular}"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Información de Pasantías</div>
+        <div class="info-grid">
+            <div class="info-row">
+                <div class="info-label">Sede:</div>
+                <div class="info-value" th:text="${p.sede != null ? p.sede.nombre : 'N/A'}"></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Especialidad:</div>
+                <div class="info-value" th:text="${p.especialidad != null ? p.especialidad.area : 'N/A'}"></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Tutor (Especialista):</div>
+                <div class="info-value" th:text="${p.especialista != null ? p.especialista.nombresApellidos : 'N/A'}"></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Fecha Inicio:</div>
+                <div class="info-value" th:text="${p.inicioPasantia}"></div>
+            </div>
+             <div class="info-row">
+                <div class="info-label">Fecha Fin:</div>
+                <div class="info-value" th:text="${p.finPasantia}"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Este documento es para uso exclusivo institucional de la UDIPSAI.</p>
+        <p th:text="'Fecha de generación: ' + ${#temporals.format(#temporals.createNow(), 'dd/MM/yyyy HH:mm')}"></p>
+    </div>
+</body>
+</html>
