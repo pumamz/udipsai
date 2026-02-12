@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 3UyIuf1dl698FMeEFsh9LkgtlLjsLmVfc9R7YTtpj4wPvnIjqICKzd9nln6hr8D
+-- \restrict 3UyIuf1dl698FMeEFsh9LkgtlLjsLmVfc9R7YTtpj4wPvnIjqICKzd9nln6hr8D
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 18.1
@@ -10,7 +10,7 @@
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
-SET transaction_timeout = 0;
+-- SET transaction_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -20,20 +20,19 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: modulo_wais; Type: SCHEMA; Schema: -; Owner: postgres
+-- Name: modulo_wais; Type: SCHEMA; Schema: -; Owner: udipsai_user
 --
 
-CREATE SCHEMA modulo_wais;
+CREATE SCHEMA IF NOT EXISTS modulo_wais;
 
 
-ALTER SCHEMA modulo_wais OWNER TO udipsai;
 
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
 --
--- Name: wais_age_group; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_age_group; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_age_group (
@@ -44,10 +43,8 @@ CREATE TABLE modulo_wais.wais_age_group (
 );
 
 
-ALTER TABLE modulo_wais.wais_age_group OWNER TO postgres;
-
 --
--- Name: wais_age_group_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_age_group_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE modulo_wais.wais_age_group ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -61,7 +58,7 @@ ALTER TABLE modulo_wais.wais_age_group ALTER COLUMN id ADD GENERATED ALWAYS AS I
 
 
 --
--- Name: wais_cit; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_cit; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_cit (
@@ -75,10 +72,9 @@ CREATE TABLE modulo_wais.wais_cit (
 );
 
 
-ALTER TABLE modulo_wais.wais_cit OWNER TO postgres;
 
 --
--- Name: wais_cit_conversion; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_cit_conversion; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_cit_conversion (
@@ -91,10 +87,9 @@ CREATE TABLE modulo_wais.wais_cit_conversion (
 );
 
 
-ALTER TABLE modulo_wais.wais_cit_conversion OWNER TO postgres;
 
 --
--- Name: wais_cit_conversion_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_cit_conversion_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE modulo_wais.wais_cit_conversion ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -108,7 +103,7 @@ ALTER TABLE modulo_wais.wais_cit_conversion ALTER COLUMN id ADD GENERATED ALWAYS
 
 
 --
--- Name: wais_cit_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_cit_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE modulo_wais.wais_cit ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -122,7 +117,7 @@ ALTER TABLE modulo_wais.wais_cit ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTIT
 
 
 --
--- Name: wais_icv; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_icv; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_icv (
@@ -136,10 +131,9 @@ CREATE TABLE modulo_wais.wais_icv (
 );
 
 
-ALTER TABLE modulo_wais.wais_icv OWNER TO postgres;
 
 --
--- Name: wais_icv_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_icv_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE modulo_wais.wais_icv ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -153,7 +147,7 @@ ALTER TABLE modulo_wais.wais_icv ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTIT
 
 
 --
--- Name: wais_imt; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_imt; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_imt (
@@ -167,10 +161,9 @@ CREATE TABLE modulo_wais.wais_imt (
 );
 
 
-ALTER TABLE modulo_wais.wais_imt OWNER TO postgres;
 
 --
--- Name: wais_imt_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_imt_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE modulo_wais.wais_imt ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -184,7 +177,7 @@ ALTER TABLE modulo_wais.wais_imt ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTIT
 
 
 --
--- Name: wais_index_composition; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_composition; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_index_composition (
@@ -194,10 +187,9 @@ CREATE TABLE modulo_wais.wais_index_composition (
 );
 
 
-ALTER TABLE modulo_wais.wais_index_composition OWNER TO postgres;
 
 --
--- Name: wais_index_composition_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_composition_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE SEQUENCE modulo_wais.wais_index_composition_id_seq
@@ -209,17 +201,16 @@ CREATE SEQUENCE modulo_wais.wais_index_composition_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE modulo_wais.wais_index_composition_id_seq OWNER TO postgres;
 
 --
--- Name: wais_index_composition_id_seq; Type: SEQUENCE OWNED BY; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_composition_id_seq; Type: SEQUENCE OWNED BY; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER SEQUENCE modulo_wais.wais_index_composition_id_seq OWNED BY modulo_wais.wais_index_composition.id;
 
 
 --
--- Name: wais_index_norm; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_norm; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_index_norm (
@@ -234,10 +225,9 @@ CREATE TABLE modulo_wais.wais_index_norm (
 );
 
 
-ALTER TABLE modulo_wais.wais_index_norm OWNER TO postgres;
 
 --
--- Name: wais_index_norm_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_norm_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE modulo_wais.wais_index_norm ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -251,7 +241,7 @@ ALTER TABLE modulo_wais.wais_index_norm ALTER COLUMN id ADD GENERATED ALWAYS AS 
 
 
 --
--- Name: wais_irp; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_irp; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_irp (
@@ -265,10 +255,9 @@ CREATE TABLE modulo_wais.wais_irp (
 );
 
 
-ALTER TABLE modulo_wais.wais_irp OWNER TO postgres;
 
 --
--- Name: wais_irp_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_irp_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE modulo_wais.wais_irp ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -282,7 +271,7 @@ ALTER TABLE modulo_wais.wais_irp ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTIT
 
 
 --
--- Name: wais_ivp; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_ivp; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_ivp (
@@ -296,10 +285,9 @@ CREATE TABLE modulo_wais.wais_ivp (
 );
 
 
-ALTER TABLE modulo_wais.wais_ivp OWNER TO postgres;
 
 --
--- Name: wais_ivp_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_ivp_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE modulo_wais.wais_ivp ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -313,7 +301,7 @@ ALTER TABLE modulo_wais.wais_ivp ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTIT
 
 
 --
--- Name: wais_norm_raw_to_scaled; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_norm_raw_to_scaled; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_norm_raw_to_scaled (
@@ -326,10 +314,9 @@ CREATE TABLE modulo_wais.wais_norm_raw_to_scaled (
 );
 
 
-ALTER TABLE modulo_wais.wais_norm_raw_to_scaled OWNER TO postgres;
 
 --
--- Name: wais_norm_raw_to_scaled_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_norm_raw_to_scaled_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE modulo_wais.wais_norm_raw_to_scaled ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -343,7 +330,7 @@ ALTER TABLE modulo_wais.wais_norm_raw_to_scaled ALTER COLUMN id ADD GENERATED AL
 
 
 --
--- Name: wais_result; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_result; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_result (
@@ -355,10 +342,9 @@ CREATE TABLE modulo_wais.wais_result (
 );
 
 
-ALTER TABLE modulo_wais.wais_result OWNER TO postgres;
 
 --
--- Name: wais_result_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_result_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE SEQUENCE modulo_wais.wais_result_id_seq
@@ -370,17 +356,16 @@ CREATE SEQUENCE modulo_wais.wais_result_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE modulo_wais.wais_result_id_seq OWNER TO postgres;
 
 --
--- Name: wais_result_id_seq; Type: SEQUENCE OWNED BY; Schema: modulo_wais; Owner: postgres
+-- Name: wais_result_id_seq; Type: SEQUENCE OWNED BY; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER SEQUENCE modulo_wais.wais_result_id_seq OWNED BY modulo_wais.wais_result.id;
 
 
 --
--- Name: wais_subtest; Type: TABLE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_subtest; Type: TABLE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE TABLE modulo_wais.wais_subtest (
@@ -390,10 +375,9 @@ CREATE TABLE modulo_wais.wais_subtest (
 );
 
 
-ALTER TABLE modulo_wais.wais_subtest OWNER TO postgres;
 
 --
--- Name: wais_subtest_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: postgres
+-- Name: wais_subtest_id_seq; Type: SEQUENCE; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE modulo_wais.wais_subtest ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -407,21 +391,21 @@ ALTER TABLE modulo_wais.wais_subtest ALTER COLUMN id ADD GENERATED ALWAYS AS IDE
 
 
 --
--- Name: wais_index_composition id; Type: DEFAULT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_composition id; Type: DEFAULT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_index_composition ALTER COLUMN id SET DEFAULT nextval('modulo_wais.wais_index_composition_id_seq'::regclass);
 
 
 --
--- Name: wais_result id; Type: DEFAULT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_result id; Type: DEFAULT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_result ALTER COLUMN id SET DEFAULT nextval('modulo_wais.wais_result_id_seq'::regclass);
 
 
 --
--- Data for Name: wais_age_group; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_age_group; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 INSERT INTO modulo_wais.wais_age_group (id, label, min_age_months, max_age_months) OVERRIDING SYSTEM VALUE VALUES (256, 'Edad 16-17', 192, 204);
@@ -437,7 +421,7 @@ INSERT INTO modulo_wais.wais_age_group (id, label, min_age_months, max_age_month
 
 
 --
--- Data for Name: wais_cit; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_cit; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 INSERT INTO modulo_wais.wais_cit (id, sum_scaled, cit, percentile, ic90, ic95) OVERRIDING SYSTEM VALUE VALUES (46, 55, 66, 1, '62-73', '61-74');
@@ -624,13 +608,13 @@ INSERT INTO modulo_wais.wais_cit (id, sum_scaled, cit, percentile, ic90, ic95) O
 
 
 --
--- Data for Name: wais_cit_conversion; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_cit_conversion; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 
 
 --
--- Data for Name: wais_icv; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_icv; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 INSERT INTO modulo_wais.wais_icv (id, sum_scaled, icv, percentile, ic90, ic95) OVERRIDING SYSTEM VALUE VALUES (23, 25, 90, 25, '85-97', '83-98');
@@ -783,7 +767,7 @@ INSERT INTO modulo_wais.wais_icv (id, sum_scaled, icv, percentile, ic90, ic95) O
 
 
 --
--- Data for Name: wais_imt; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_imt; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 INSERT INTO modulo_wais.wais_imt (id, sum_scaled, imt, percentile, ic90, ic95) OVERRIDING SYSTEM VALUE VALUES (67, 39, 40, 50, '90-110', '85-115');
@@ -937,7 +921,7 @@ INSERT INTO modulo_wais.wais_imt (id, sum_scaled, imt, percentile, ic90, ic95) O
 
 
 --
--- Data for Name: wais_index_composition; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_index_composition; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 INSERT INTO modulo_wais.wais_index_composition (id, index_code, subtest_id) VALUES (202, 'ICV', 212);
@@ -963,7 +947,7 @@ INSERT INTO modulo_wais.wais_index_composition (id, index_code, subtest_id) VALU
 
 
 --
--- Data for Name: wais_index_norm; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_index_norm; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 INSERT INTO modulo_wais.wais_index_norm (id, type, sum_scaled, value, percentile, ic90, ic95) OVERRIDING SYSTEM VALUE VALUES (7301, 'CIT', 10, 40, 0, '38-48', '37-49');
@@ -1334,7 +1318,7 @@ INSERT INTO modulo_wais.wais_index_norm (id, type, sum_scaled, value, percentile
 
 
 --
--- Data for Name: wais_irp; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_irp; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 INSERT INTO modulo_wais.wais_irp (id, sum_scaled, irp, percentile, ic90, ic95) OVERRIDING SYSTEM VALUE VALUES (23, 25, 89, 23, '84-96', '83-97');
@@ -1487,7 +1471,7 @@ INSERT INTO modulo_wais.wais_irp (id, sum_scaled, irp, percentile, ic90, ic95) O
 
 
 --
--- Data for Name: wais_ivp; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_ivp; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 INSERT INTO modulo_wais.wais_ivp (id, sum_scaled, ivp, percentile, ic90, ic95) OVERRIDING SYSTEM VALUE VALUES (67, 39, 40, 50, '90-110', '85-115');
@@ -1641,7 +1625,7 @@ INSERT INTO modulo_wais.wais_ivp (id, sum_scaled, ivp, percentile, ic90, ic95) O
 
 
 --
--- Data for Name: wais_norm_raw_to_scaled; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_norm_raw_to_scaled; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 INSERT INTO modulo_wais.wais_norm_raw_to_scaled (id, age_group_id, subtest_id, raw_score, scaled_score) OVERRIDING SYSTEM VALUE VALUES (126210, 256, 211, 0, 1);
@@ -6767,13 +6751,13 @@ INSERT INTO modulo_wais.wais_norm_raw_to_scaled (id, age_group_id, subtest_id, r
 
 
 --
--- Data for Name: wais_result; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_result; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 
 
 --
--- Data for Name: wais_subtest; Type: TABLE DATA; Schema: modulo_wais; Owner: postgres
+-- Data for Name: wais_subtest; Type: TABLE DATA; Schema: modulo_wais; Owner: udipsai_user
 --
 
 INSERT INTO modulo_wais.wais_subtest (id, code, name) OVERRIDING SYSTEM VALUE VALUES (211, 'C', 'Cubos');
@@ -6789,91 +6773,91 @@ INSERT INTO modulo_wais.wais_subtest (id, code, name) OVERRIDING SYSTEM VALUE VA
 
 
 --
--- Name: wais_age_group_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_age_group_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_age_group_id_seq', 265, true);
 
 
 --
--- Name: wais_cit_conversion_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_cit_conversion_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_cit_conversion_id_seq', 1, false);
 
 
 --
--- Name: wais_cit_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_cit_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_cit_id_seq', 1185, true);
 
 
 --
--- Name: wais_icv_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_icv_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_icv_id_seq', 415, true);
 
 
 --
--- Name: wais_imt_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_imt_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_imt_id_seq', 325, true);
 
 
 --
--- Name: wais_index_composition_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_composition_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_index_composition_id_seq', 221, true);
 
 
 --
--- Name: wais_index_norm_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_norm_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_index_norm_id_seq', 7665, true);
 
 
 --
--- Name: wais_irp_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_irp_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_irp_id_seq', 415, true);
 
 
 --
--- Name: wais_ivp_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_ivp_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_ivp_id_seq', 325, true);
 
 
 --
--- Name: wais_norm_raw_to_scaled_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_norm_raw_to_scaled_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_norm_raw_to_scaled_id_seq', 131407, true);
 
 
 --
--- Name: wais_result_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_result_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_result_id_seq', 1, false);
 
 
 --
--- Name: wais_subtest_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: postgres
+-- Name: wais_subtest_id_seq; Type: SEQUENCE SET; Schema: modulo_wais; Owner: udipsai_user
 --
 
 SELECT pg_catalog.setval('modulo_wais.wais_subtest_id_seq', 220, true);
 
 
 --
--- Name: wais_age_group wais_age_group_label_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_age_group wais_age_group_label_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_age_group
@@ -6881,7 +6865,7 @@ ALTER TABLE ONLY modulo_wais.wais_age_group
 
 
 --
--- Name: wais_age_group wais_age_group_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_age_group wais_age_group_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_age_group
@@ -6889,7 +6873,7 @@ ALTER TABLE ONLY modulo_wais.wais_age_group
 
 
 --
--- Name: wais_cit_conversion wais_cit_conversion_age_group_id_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_cit_conversion wais_cit_conversion_age_group_id_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_cit_conversion
@@ -6897,7 +6881,7 @@ ALTER TABLE ONLY modulo_wais.wais_cit_conversion
 
 
 --
--- Name: wais_cit_conversion wais_cit_conversion_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_cit_conversion wais_cit_conversion_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_cit_conversion
@@ -6905,7 +6889,7 @@ ALTER TABLE ONLY modulo_wais.wais_cit_conversion
 
 
 --
--- Name: wais_cit wais_cit_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_cit wais_cit_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_cit
@@ -6913,7 +6897,7 @@ ALTER TABLE ONLY modulo_wais.wais_cit
 
 
 --
--- Name: wais_cit wais_cit_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_cit wais_cit_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_cit
@@ -6921,7 +6905,7 @@ ALTER TABLE ONLY modulo_wais.wais_cit
 
 
 --
--- Name: wais_icv wais_icv_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_icv wais_icv_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_icv
@@ -6929,7 +6913,7 @@ ALTER TABLE ONLY modulo_wais.wais_icv
 
 
 --
--- Name: wais_icv wais_icv_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_icv wais_icv_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_icv
@@ -6937,7 +6921,7 @@ ALTER TABLE ONLY modulo_wais.wais_icv
 
 
 --
--- Name: wais_imt wais_imt_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_imt wais_imt_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_imt
@@ -6945,7 +6929,7 @@ ALTER TABLE ONLY modulo_wais.wais_imt
 
 
 --
--- Name: wais_imt wais_imt_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_imt wais_imt_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_imt
@@ -6953,7 +6937,7 @@ ALTER TABLE ONLY modulo_wais.wais_imt
 
 
 --
--- Name: wais_index_composition wais_index_composition_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_composition wais_index_composition_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_index_composition
@@ -6961,7 +6945,7 @@ ALTER TABLE ONLY modulo_wais.wais_index_composition
 
 
 --
--- Name: wais_index_norm wais_index_norm_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_norm wais_index_norm_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_index_norm
@@ -6969,7 +6953,7 @@ ALTER TABLE ONLY modulo_wais.wais_index_norm
 
 
 --
--- Name: wais_index_norm wais_index_norm_type_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_norm wais_index_norm_type_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_index_norm
@@ -6977,7 +6961,7 @@ ALTER TABLE ONLY modulo_wais.wais_index_norm
 
 
 --
--- Name: wais_irp wais_irp_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_irp wais_irp_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_irp
@@ -6985,7 +6969,7 @@ ALTER TABLE ONLY modulo_wais.wais_irp
 
 
 --
--- Name: wais_irp wais_irp_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_irp wais_irp_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_irp
@@ -6993,7 +6977,7 @@ ALTER TABLE ONLY modulo_wais.wais_irp
 
 
 --
--- Name: wais_ivp wais_ivp_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_ivp wais_ivp_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_ivp
@@ -7001,7 +6985,7 @@ ALTER TABLE ONLY modulo_wais.wais_ivp
 
 
 --
--- Name: wais_ivp wais_ivp_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_ivp wais_ivp_sum_scaled_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_ivp
@@ -7009,7 +6993,7 @@ ALTER TABLE ONLY modulo_wais.wais_ivp
 
 
 --
--- Name: wais_norm_raw_to_scaled wais_norm_raw_to_scaled_age_group_id_subtest_id_raw_score_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_norm_raw_to_scaled wais_norm_raw_to_scaled_age_group_id_subtest_id_raw_score_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_norm_raw_to_scaled
@@ -7017,7 +7001,7 @@ ALTER TABLE ONLY modulo_wais.wais_norm_raw_to_scaled
 
 
 --
--- Name: wais_norm_raw_to_scaled wais_norm_raw_to_scaled_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_norm_raw_to_scaled wais_norm_raw_to_scaled_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_norm_raw_to_scaled
@@ -7025,7 +7009,7 @@ ALTER TABLE ONLY modulo_wais.wais_norm_raw_to_scaled
 
 
 --
--- Name: wais_result wais_result_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_result wais_result_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_result
@@ -7033,7 +7017,7 @@ ALTER TABLE ONLY modulo_wais.wais_result
 
 
 --
--- Name: wais_subtest wais_subtest_code_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_subtest wais_subtest_code_key; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_subtest
@@ -7041,7 +7025,7 @@ ALTER TABLE ONLY modulo_wais.wais_subtest
 
 
 --
--- Name: wais_subtest wais_subtest_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_subtest wais_subtest_pkey; Type: CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_subtest
@@ -7049,14 +7033,14 @@ ALTER TABLE ONLY modulo_wais.wais_subtest
 
 
 --
--- Name: wais_index_composition_index_code_subtest_id_key; Type: INDEX; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_composition_index_code_subtest_id_key; Type: INDEX; Schema: modulo_wais; Owner: udipsai_user
 --
 
 CREATE UNIQUE INDEX wais_index_composition_index_code_subtest_id_key ON modulo_wais.wais_index_composition USING btree (index_code, subtest_id);
 
 
 --
--- Name: wais_cit_conversion wais_cit_conversion_age_group_id_fkey; Type: FK CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_cit_conversion wais_cit_conversion_age_group_id_fkey; Type: FK CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_cit_conversion
@@ -7064,7 +7048,7 @@ ALTER TABLE ONLY modulo_wais.wais_cit_conversion
 
 
 --
--- Name: wais_index_composition wais_index_composition_subtest_id_fkey; Type: FK CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_index_composition wais_index_composition_subtest_id_fkey; Type: FK CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_index_composition
@@ -7072,7 +7056,7 @@ ALTER TABLE ONLY modulo_wais.wais_index_composition
 
 
 --
--- Name: wais_norm_raw_to_scaled wais_norm_raw_to_scaled_age_group_id_fkey; Type: FK CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_norm_raw_to_scaled wais_norm_raw_to_scaled_age_group_id_fkey; Type: FK CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_norm_raw_to_scaled
@@ -7080,7 +7064,7 @@ ALTER TABLE ONLY modulo_wais.wais_norm_raw_to_scaled
 
 
 --
--- Name: wais_norm_raw_to_scaled wais_norm_raw_to_scaled_subtest_id_fkey; Type: FK CONSTRAINT; Schema: modulo_wais; Owner: postgres
+-- Name: wais_norm_raw_to_scaled wais_norm_raw_to_scaled_subtest_id_fkey; Type: FK CONSTRAINT; Schema: modulo_wais; Owner: udipsai_user
 --
 
 ALTER TABLE ONLY modulo_wais.wais_norm_raw_to_scaled
@@ -7091,5 +7075,5 @@ ALTER TABLE ONLY modulo_wais.wais_norm_raw_to_scaled
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 3UyIuf1dl698FMeEFsh9LkgtlLjsLmVfc9R7YTtpj4wPvnIjqICKzd9nln6hr8D
+-- \unrestrict 3UyIuf1dl698FMeEFsh9LkgtlLjsLmVfc9R7YTtpj4wPvnIjqICKzd9nln6hr8D
 

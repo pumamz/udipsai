@@ -10,12 +10,19 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./scripts:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U udipsai_user -d udipsai"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   backend:
     build: ./udipsai-back
     container_name: udipsai-backend
     depends_on:
-      - database
+      database:
+        condition: service_healthy
     environment:
       SPRING_PROFILES_ACTIVE: prod
       DB_URL: jdbc:postgresql://database:5432/udipsai
@@ -25,6 +32,12 @@ services:
       JWT_EXPIRATION: 86400000
     ports:
       - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
     volumes:
       - ./uploads:/uploads
 
@@ -35,7 +48,8 @@ services:
       - "80:80"
       - "443:443"
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     volumes:
       - ./certs:/etc/nginx/certs:ro # Montamos los certificados generados
 
